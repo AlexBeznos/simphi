@@ -1,23 +1,25 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'simple_hash_input/version'
+require 'simphi/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "simple_hash_input"
-  spec.version       = SimpleHashInput::VERSION
+  spec.name          = "simphi"
+  spec.version       = Simphi::VERSION
   spec.authors       = ["Alex Beznos"]
   spec.email         = ["beznosa@yahoo.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Ability to deale with hash like inputs}
+  spec.description   = %q{The gem will be suetable if you want to make hash from input}
+  spec.homepage      = "https://github.com/AlexBeznos/simphi"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_development_dependency "simple_form", "> 2.0"
+  spec.add_development_dependency "rack", "~> 1.6.4"
   spec.add_development_dependency "bundler", "~> 1.7"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rspec"
 end
