@@ -30,6 +30,24 @@ The middleware relies to `-simphi` part of the hash key.
     }
   }
 ```
+
+### Hash Input
+SimphiInput is a SimpleForm custom input which create a typical hash structure for input with key, value.
+
+[Simphi Hash Input](http://gdurl.com/wTNH)
+
+It can be used as usual custom input:
+```ruby
+= simple_form_for do |f|
+  = f.input :contacts, as: :simphi
+   # Required fields can be passed as array of symbols or single symbol.
+   # It works as field which will be presetted even if 'contacts' will be empty.
+  = f.input :contacts, as: :simphi, required_fields: [:phone, :skype]
+  # Also it can be populated with options for key_input, value_input, remove_button, error, add_button
+  = f.input :contacts, as: :simphi, key_input: { class: 'shi_key' }, add_button: { id: 'custom_button_id' }
+```
+
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -55,6 +73,8 @@ class Application < Rails::Application
   config.middleware.use Simphi::Middleware
 end
 ```
+
+To use hash input can be used `as: :simphi` option for simple form input.
 
 ## Contributing
 
