@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
   spec.name          = "simphi"
-  spec.version       = "0.0.1"
+  spec.version       = "0.0.2"
   spec.authors       = ["Alex Beznos"]
   spec.email         = ["beznosa@yahoo.com"]
   spec.summary       = %q{Ability to deale with hash like inputs}
