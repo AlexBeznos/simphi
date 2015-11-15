@@ -6,9 +6,8 @@ This gem were implemented for natural using hashes in web development.
 The gem divided in two parts: middleware and simple_form custom input.
 With *Simphi::Middleware* you can send params to server and they will be rebuilt to normal hash and with simple_form input the hash can be sended in proper format to server.
 
-### Middleware
+#### Middleware
 The middleware relies to `-simphi` part of the hash key.
-#### Example
 ```ruby
   "contacts-simphi": {
     "don't matter what here": {
@@ -31,7 +30,7 @@ The middleware relies to `-simphi` part of the hash key.
   }
 ```
 
-### Hash Input
+#### Hash Input
 SimphiInput is a SimpleForm custom input which create a typical hash structure for input with key, value.
 
 [Simphi Hash Input](http://gdurl.com/wTNH)
@@ -64,7 +63,8 @@ Or install it yourself as:
 
     $ gem install simphi
 
-To use middleware you need to add such lines to your `config/application.rb` file(in case of using rails):
+#### Middleware
+To use middleware you need to add such lines to your `config/application.rb` file:
 
 ```ruby
 require "simphi/middleware"
@@ -74,8 +74,29 @@ class Application < Rails::Application
 end
 ```
 
-To use hash input can be used `as: :simphi` option for simple form input.
+#### Simphi Input
+Hash input can be used as simple_form input with `as: :simphi` option. But you can reassign `simphi` to another name:
+```ruby
+# config/initializer/simphi.rb
+module SimpleForm
+  class FormBuilder
+    map_type :name_which_you_want, to: Simphi::SimphiInput
+  end
+end
+```
+But to make `simphi` fully functional assets should be included
 
+```js
+// app/assets/javascripts/application.js
+
+//= require simphi
+```
+
+```js
+// app/assets/stylesheets/application.css
+
+*= require "simphi" // NOTE: this file is only for hidding 'sample' hash element which used for generating new hash pairs
+```
 ## Contributing
 
 1. Fork it ( https://github.com/AlexBeznos/simphi/fork )
