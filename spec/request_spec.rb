@@ -35,7 +35,7 @@ describe Simphi::Request do
           "one" => "one",
           "two" => {
             "more" => {
-              "first-shi_hash" => {
+              "first-simphi" => {
                 "first-pair" => {
                   "key" => "first-key",
                   "value" => "first-value"
@@ -47,7 +47,7 @@ describe Simphi::Request do
               }
             }
           },
-          "three-shi_hash" => {
+          "three-simphi" => {
             "first-pair" => {
               "key" => "first-key",
               "value" => "first-value"
@@ -84,7 +84,7 @@ describe Simphi::Request do
       context "include only key" do
         let(:params_before) do
           {
-            "first-shi_hash" => {
+            "first-simphi" => {
               "first-pair" => {
                 "key" => "first-key"
               }
@@ -100,7 +100,7 @@ describe Simphi::Request do
       context "include key and value but with incorect names" do
         let(:params_before) do
           {
-            "first-shi_hash" => {
+            "first-simphi" => {
               "first-pair" => {
                 "k" => "first-key",
                 "value" => "first-value"

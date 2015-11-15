@@ -8,7 +8,7 @@ module Simphi
 
         if with_hash? key
           param = delete_param(key)
-          update_param(key.gsub(/-shi_hash/, ''), normalized_hash(param))
+          update_param(key.gsub(/-simphi/, ''), normalized_hash(param))
         end
 
 
@@ -18,8 +18,8 @@ module Simphi
     private
 
     def with_hash?(param)
-      return param =~ /-shi_hash/ if param.is_a? String
-      return param.to_s =~ /-shi_hash/ if param.is_a? Hash
+      return param =~ /-simphi/ if param.is_a? String
+      return param.to_s =~ /-simphi/ if param.is_a? Hash
     end
 
     def normalized_hash(params)
@@ -43,7 +43,7 @@ module Simphi
           if with_hash? k
             {
               key: k,
-              obj: { k.gsub(/-shi_hash/, '') => normalized_hash(v) }
+              obj: { k.gsub(/-simphi/, '') => normalized_hash(v) }
             }
           end
 
