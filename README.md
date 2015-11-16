@@ -33,7 +33,7 @@ The middleware relies to `-simphi` part of the hash key.
 #### Hash Input
 SimphiInput is a SimpleForm custom input which create a typical hash structure for input with key, value.
 
-[Simphi Hash Input](http://gdurl.com/wTNH)
+![Simphi Hash Input](http://gdurl.com/wTNH)
 
 It can be used as usual custom input:
 ```ruby
