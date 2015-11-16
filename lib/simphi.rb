@@ -1,5 +1,3 @@
-require 'assets/javascripts/simphi.js.coffee'
-require 'assets/stylesheets/simphi.css'
 require "simple_form"
 require "simphi/simphi_input"
 
