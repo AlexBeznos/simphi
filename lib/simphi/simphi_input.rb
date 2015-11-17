@@ -13,7 +13,7 @@ module Simphi
     def input(wrapper_options)
       @io = ActiveSupport::SafeBuffer.new
 
-      @builder.fields_for "#{attribute_name}-shi_hash" do |b|
+      @builder.fields_for "#{attribute_name}-simphi" do |b|
         @hash_builder = b
 
         @io.tap do |sb|
@@ -38,7 +38,7 @@ module Simphi
     end
 
     def not_required_attributes
-      attribute_value.try(:keys).to_a - required_attributes + [:sample_shi_hash]
+      attribute_value.try(:keys).to_a - required_attributes + [:sample_simphi]
     end
 
     def get_fields_for(array, start, required = false)
@@ -81,7 +81,7 @@ module Simphi
       opts = input_options_for(:hash_pair)
       klass = ["hash-#{index}"]
       klass << opts.fetch(:class, 'row hash-pair')
-      klass << 'sample' if key == :sample_shi_hash
+      klass << 'sample' if key == :sample_simphi
       klass << 'has_error' if error(key)
       klass * ' '
 
@@ -102,7 +102,7 @@ module Simphi
     end
 
     def key_options(key)
-      extends = if key == :sample_shi_hash
+      extends = if key == :sample_simphi
         { disabled: 'disabled' }
       else
         { value: key }
@@ -114,7 +114,7 @@ module Simphi
     def value_options(key)
       value = attribute_value.try(:[], key)
       opts = {}
-      opts.merge!({ disabled: 'disabled' }) if key == :sample_shi_hash
+      opts.merge!({ disabled: 'disabled' }) if key == :sample_simphi
       opts.merge!(value ? { value: value } : {})
       opts.merge( input_options_for(:value_input) )
     end

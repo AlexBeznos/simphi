@@ -1,5 +1,5 @@
 require "spec_helper"
-require "simphi"
+require "simphi/form_builder"
 require "simphi/simphi_input"
 
 RSpec.shared_examples "with add more button" do
