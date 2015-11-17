@@ -63,6 +63,7 @@ Or install it yourself as:
 
     $ gem install simphi
 
+## Usage
 #### Middleware
 To use middleware you need to add such lines to your `config/application.rb` file:
 
