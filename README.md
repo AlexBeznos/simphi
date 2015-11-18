@@ -1,4 +1,4 @@
-# Simphi
+# Simphi [![Build Status](https://travis-ci.org/AlexBeznos/simphi.svg)](https://travis-ci.org/AlexBeznos/simphi)[![Code Climate](https://codeclimate.com/github/AlexBeznos/simphi/badges/gpa.svg)](https://codeclimate.com/github/AlexBeznos/simphi)
 
 ## Description
 
