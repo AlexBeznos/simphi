@@ -56,7 +56,7 @@ module Simphi
     def add_button_options
       opts = input_options_for(:add_button)
       [
-        opts.fetch(:label, I18n.t('simple_hash_input.add_button', default: 'Add more')),
+        opts.fetch(:label, I18n.t('simphi.add_button', default: 'Add more')),
         {
           class: "#{opts.fetch(:class, 'btn btn-block btn-primary')} add_hash_pair"
         }.merge(opts.exclude_keys(:label, :class))
@@ -133,7 +133,7 @@ module Simphi
     def remove_button_options
       opts = input_options_for(:remove_button)
       [
-        opts.fetch(:label, 'x'),
+        opts.fetch(:label, I18n.t('simphi.remove_button', default: 'X')),
         {
           class: "#{opts.fetch(:class, 'btn btn-default pull-right')} remove_hash_pair"
         }.merge(opts.exclude_keys(:label, :class, :wrapper))

@@ -31,7 +31,7 @@ The middleware relies to `-simphi` part of the hash key.
 ```
 
 #### Hash Input
-SimphiInput is a SimpleForm custom input which create a typical hash structure for input with key, value.
+Simphi Input is a SimpleForm custom input which create a typical hash structure for input with key, value.
 
 ![Simphi Hash Input](http://gdurl.com/wTNH)
 
@@ -43,7 +43,7 @@ It can be used as usual custom input:
    # It works as field which will be presetted even if 'contacts' will be empty.
   = f.input :contacts, as: :simphi, required_fields: [:phone, :skype]
   # Also it can be populated with options for key_input, value_input, remove_button, error, add_button
-  = f.input :contacts, as: :simphi, key_input: { class: 'shi_key' }, add_button: { id: 'custom_button_id' }
+  = f.input :contacts, as: :simphi, key_input: { class: 'shi_key' }, add_button: { id: 'custom_button_id', label: 'Add hash pair' }
 ```
 
 
@@ -85,7 +85,7 @@ module SimpleForm
   end
 end
 ```
-But to make `simphi` fully functional assets should be included
+But to make `simphi` fully functional, assets should be included
 
 ```js
 // app/assets/javascripts/application.js
@@ -98,6 +98,17 @@ But to make `simphi` fully functional assets should be included
 
 *= require "simphi" // NOTE: this file is only for hidding 'sample' hash element which used for generating new hash pairs
 ```
+
+To change value of add_button, i18n can be used:
+
+```yaml
+# config/locales/en.yml
+en:
+  simphi:
+    add_button: Add new hash button
+    remove_button: Delete hash element
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/AlexBeznos/simphi/fork )
