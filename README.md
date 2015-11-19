@@ -31,7 +31,7 @@ The middleware relies to `-simphi` part of the hash key.
 ```
 
 #### Hash Input
-Simphi Input is a SimpleForm custom input which create a typical hash structure for input with key, value.
+Simphi Input is a SimpleForm custom input which creates a typical hash structure for input with key, value.
 
 ![Simphi Hash Input](http://gdurl.com/wTNH)
 
